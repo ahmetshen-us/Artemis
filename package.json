@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "casual": "^1.5.17",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-graphql": "^0.8.0",
     "graphql": "^14.3.1",

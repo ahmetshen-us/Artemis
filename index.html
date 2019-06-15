@@ -119,8 +119,16 @@
       })
       
      var randAct = acts[Math.floor(Math.random() * Math.floor(acts.length))]
-     
+console.log(acts)
+console.log(randAct)
+$.get( "http://localhost:8080/graphql?query=%7B%0AgetAnActivity(type%3A%22"+randAct+"%22)%20%7B%0A%20%20activity%0A%20%20accessibility%0A%20%20type%0A%20%20participants%0A%20%20price%0A%20%20link%0A%7D%0A%20%20%0A%0A%7D", function( data ) {
+  var rAct = data["data"]["getAnActivity"].activity;
+  var rPart = data["data"]["getAnActivity"].participants;
+  var rPrice = data["data"]["getAnActivity"].price;
 
+  console.log(rAct,rPart,rPrice)
+
+});
 
       // $('#exampleModal').modal('show');
 
