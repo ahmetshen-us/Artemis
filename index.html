@@ -10,39 +10,40 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="bowarrow.ico" />
   <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <p class="header">I feel like:</p>
 
-
-  <div class="cards container justify-content-md-center">
+<div class="container"> 
+  <div class="cards justify-content-md-center">
 
     <div class="row">
-      <div class="cardx text-center" id="learning">
+      <div class="cardx text-center" id="learning" val="education">
         <p class="typebox"><span class="rounded">Learning</span></p>
       </div>
 
-      <div class="cardx text-center" id="havingfun">
+      <div class="cardx text-center" id="havingfun" val="recreational">
         <p class="typebox"><span class="rounded">Having Fun</span></p>
       </div>
 
-      <div class="cardx text-center" id="socializing">
+      <div class="cardx text-center" id="socializing" val="social">
         <p class="typebox"><span class="rounded">Socializing</span></p>
       </div>
 
     </div>
     <div class="row">
 
-      <div class="cardx text-center" id="cooking">
+      <div class="cardx text-center" id="cooking" val="cooking">
         <p class="typebox"><span class="rounded">Cooking</span></p>
       </div>
 
-      <div class="cardx text-center" id="crafting">
+      <div class="cardx text-center" id="crafting"  val="diy">
         <p class="typebox"><span class="rounded">Crafting</span></p>
       </div>
 
-      <div class="cardx text-center" id="helping">
+      <div class="cardx text-center" id="helping" val="charity">
         <p class="typebox"><span class="rounded">Helping</span></p>
       </div>
 
@@ -50,24 +51,44 @@
     </div>
 
     <div class="row">
-      <div class="cardx text-center" id="relaxing">
+      <div class="cardx text-center" id="relaxing" val="relaxation">
         <p class="typebox"><span class="rounded">Relaxing</span></p>
       </div>
-      <div class="cardx text-center" id="musicking">
+      <div class="cardx text-center" id="musicking" val="music">
         <p class="typebox"><span class="rounded">Musicking</span></p>
       </div>
 
-      <div class="cardx text-center" id="busyworking">
+      <div class="cardx text-center" id="busyworking" val="busywork">
         <p class="typebox"><span class="rounded">Busyworking</span></p>
       </div>
     </div>
   </div>
 
+ 
+
+  <button  class="search btn btn-success" id="searchButton"></spa><i class="fa fa-long-arrow-right"></i></button>
+  <!-- data-toggle="modal" data-target="#exampleModal" -->
   </div>
 
-  <button  class="search rounded float-right text-center">Find activities!</button>
-
-  </div>
+  <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modalHeader">
+            <h5 class="modal-title">Here is one suggestion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="modalBody">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -85,6 +106,26 @@
         else { $(this).addClass('active'); }
       });
     });
+
+    $('#searchButton').click(function(){
+      var acts = [];
+      $('.cardx').each(function(){
+      
+        if ($(this).hasClass('active')) {
+          // console.log($(this).attr("val"))
+          acts.push($(this).attr("val"))
+        }
+
+      })
+      
+     var randAct = acts[Math.floor(Math.random() * Math.floor(acts.length))]
+     
+
+
+      // $('#exampleModal').modal('show');
+
+
+    })
 
 
   </script>
