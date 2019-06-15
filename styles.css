@@ -9,18 +9,23 @@ body{
   flex-wrap: wrap;
 }
 
-.card {
+.cardx {
   flex: 1 0 20%;
   position: relative;
   margin: .5em;
   padding: 2em;
   min-height: 4em;
   background: white;
-  border: 3px solid grey;
+  border: 5px solid grey;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
 }
 
-.active { border-color: orangered; 
-background-color: orange}
+.active { border-color: rgb(169, 243, 158); 
+}
 
 /* This is where the magic happens */
 input[type="checkbox"] {
@@ -39,7 +44,7 @@ input[type="checkbox"] {
 /* Use z-index to make it accessible to keyboard navigation */
 @media (hover: hover) {
               input[type="checkbox"] { z-index: -1 }
-  .card:hover input[type="checkbox"],
+  .cardx:hover input[type="checkbox"],
               input[type="checkbox"]:focus,
               input[type="checkbox"]:checked { z-index: auto }
 }
@@ -92,12 +97,42 @@ input[type="checkbox"] {
 
 #cooking{
 background-image: url("https://images.unsplash.com/photo-1514986888952-8cd320577b68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 200px;
-
 }
+
+#learning{
+  background-image: url("https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+}
+
+#havingfun{
+  background-image: url("https://images.unsplash.com/photo-1450500392544-c2cb0fd6e3b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+}
+
+#socializing{
+  background-image: url("https://images.unsplash.com/photo-1470753937643-efeb931202a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+}
+
+#crafting{
+  background-image: url("https://images.unsplash.com/photo-1452860606245-08befc0ff44b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+}
+
+#helping{
+  background-image: url("https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+}
+
+#relaxing{
+  background-image: url("https://images.unsplash.com/photo-1519834411415-51492bcd6027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1924&q=80");
+}
+
+#musicking{
+  background-image: url("https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80");
+}
+
+#busyworking{
+  background-image: url("https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80");
+}
+
+
+
 
 
 

@@ -15,37 +15,61 @@
     <p class="header">I feel like:</p>
 
 
-<div class="cards">
+<div class="cards container justify-content-md-center">
 
-  <div class="card text-center" id="cooking">
+  <div class="row">
+  <div class="cardx text-center" id="learning">
+    <p class="typebox"><span class="rounded">Learning</span></p>
+  </div>
+
+  <div class="cardx text-center" id="havingfun">
+    <p class="typebox"><span class="rounded">Having Fun</span></p>
+  </div>
+
+  <div class="cardx text-center" id="socializing">
     <p class="typebox"><span class="rounded">Socializing</span></p>
   </div>
   
-  <div class="card text-center" id="cooking">
-    <p class="typebox"><span class="rounded">Socializing</span></p>
-  </div>
-  
-  <div class="card">
+</div>
+<div class="row">
 
+  <div class="cardx text-center" id="cooking">
+    <p class="typebox"><span class="rounded">Cooking</span></p>
   </div>
 
+  <div class="cardx text-center" id="crafting">
+      <p class="typebox"><span class="rounded">Crafting</span></p>
+    </div>
+
+    <div class="cardx text-center" id="helping">
+        <p class="typebox"><span class="rounded">Helping</span></p>
+      </div>
   
+
 </div>
 
-    <div class="container">
+<div class="row">
+    <div class="cardx text-center" id="relaxing">
+        <p class="typebox"><span class="rounded">Relaxing</span></p>
+      </div>
+      <div class="cardx text-center" id="musicking">
+          <p class="typebox"><span class="rounded">Musicking</span></p>
+        </div>
 
-<div class="row justify-content-md-center">
-        <div class="typebox rounded text-center  align-self-center">Learning</div>
-        <div class="typebox rounded  text-center  align-self-center">Having Fun</div>
-        <div class="typebox rounded  text-center  align-self-center">Socializing</div>
-        <div class="typebox rounded  text-center  align-self-center">Crafting</div>
+        <div class="cardx text-center" id="busyworking">
+            <p class="typebox"><span class="rounded">Busyworking</span></p>
+          </div>
 </div>
-<div class="row justify-content-md-center">
+</div>
 
-        <div class="typebox rounded  text-center col-3">Helping</div>
-        <div class="typebox rounded  text-center col-3">Cooking</div>
-        <div class="typebox rounded  text-center col-3">Relaxing</div>
-        <div class="typebox rounded  text-center col-3">Musicking</div>
+
+
+
+
+
+
+
+
 </div>
     
         <div class="search rounded float-right text-center">Find activities!</div>
@@ -69,7 +93,7 @@
     <script>
         $(document).ready(function () {
   // Card Multi Select
-  $('.card').click(function () {
+  $('.cardx').click(function () {
 
     if ($(this).hasClass('active')) {
       $(this).removeClass('active');
