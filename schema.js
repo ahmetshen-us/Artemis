@@ -6,7 +6,7 @@ const { resolvers } =require('./resolvers');
 
 const typeDefs = `
 type Query{
-    getAnActivity: Activity
+    getAnActivity(type: String, participants:Int, price: Float): Activity
     getByType(t: String): Activity
 }
 

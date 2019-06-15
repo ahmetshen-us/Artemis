@@ -4,12 +4,18 @@ const axios = require('axios');
 const resolvers = {
 
 Query: {
-        getAnActivity: () => {
+        getAnActivity: (root, args) => {
         
         return new Promise((resolve, object) => {
-console.log("resolvers")
+var query ="";
 
-        axios.get('https://www.boredapi.com/api/activity?type=music')
+for (var property in args) {
+query+=property+"="+args[property]+"&"
+}
+
+
+
+        axios.get('https://www.boredapi.com/api/activity?'+query)
           .then(response => {
             console.log(response.data)
 
@@ -27,7 +33,7 @@ console.log("resolvers")
 	getByType: (root, { t }) => {
         
         return new Promise((resolve, object) => {
-console.log("resolvers")
+
 
         axios.get('https://www.boredapi.com/api/activity?type='+t)
           .then(response => {
