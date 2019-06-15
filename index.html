@@ -1,109 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Artemis - Get unbored!</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
 
-    <link rel="shortcut icon" type="image/x-icon" href="bowarrow.ico"/>
-    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    
-    <p href="#" style="" class="d-flex justify-content-center" >Artemis - Get Unbored!</p>
-    <p class="header">I feel like:</p>
+<head>
+  <meta charset="utf-8">
+  <title>Artemis - Get unbored!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <link rel="shortcut icon" type="image/x-icon" href="bowarrow.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <p class="header">I feel like:</p>
 
 
-<div class="cards container justify-content-md-center">
+  <div class="cards container justify-content-md-center">
 
-  <div class="row">
-  <div class="cardx text-center" id="learning">
-    <p class="typebox"><span class="rounded">Learning</span></p>
-  </div>
+    <div class="row">
+      <div class="cardx text-center" id="learning">
+        <p class="typebox"><span class="rounded">Learning</span></p>
+      </div>
 
-  <div class="cardx text-center" id="havingfun">
-    <p class="typebox"><span class="rounded">Having Fun</span></p>
-  </div>
+      <div class="cardx text-center" id="havingfun">
+        <p class="typebox"><span class="rounded">Having Fun</span></p>
+      </div>
 
-  <div class="cardx text-center" id="socializing">
-    <p class="typebox"><span class="rounded">Socializing</span></p>
-  </div>
-  
-</div>
-<div class="row">
+      <div class="cardx text-center" id="socializing">
+        <p class="typebox"><span class="rounded">Socializing</span></p>
+      </div>
 
-  <div class="cardx text-center" id="cooking">
-    <p class="typebox"><span class="rounded">Cooking</span></p>
-  </div>
-
-  <div class="cardx text-center" id="crafting">
-      <p class="typebox"><span class="rounded">Crafting</span></p>
     </div>
+    <div class="row">
 
-    <div class="cardx text-center" id="helping">
+      <div class="cardx text-center" id="cooking">
+        <p class="typebox"><span class="rounded">Cooking</span></p>
+      </div>
+
+      <div class="cardx text-center" id="crafting">
+        <p class="typebox"><span class="rounded">Crafting</span></p>
+      </div>
+
+      <div class="cardx text-center" id="helping">
         <p class="typebox"><span class="rounded">Helping</span></p>
       </div>
-  
 
-</div>
 
-<div class="row">
-    <div class="cardx text-center" id="relaxing">
+    </div>
+
+    <div class="row">
+      <div class="cardx text-center" id="relaxing">
         <p class="typebox"><span class="rounded">Relaxing</span></p>
       </div>
       <div class="cardx text-center" id="musicking">
-          <p class="typebox"><span class="rounded">Musicking</span></p>
-        </div>
+        <p class="typebox"><span class="rounded">Musicking</span></p>
+      </div>
 
-        <div class="cardx text-center" id="busyworking">
-            <p class="typebox"><span class="rounded">Busyworking</span></p>
-          </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-</div>
-    
-        <div class="search rounded float-right text-center">Find activities!</div>
-        <p class="invisible">.</p>
-        <p class="invisible">.</p>
-        <p class="invisible">.</p>
-
-
-
-
+      <div class="cardx text-center" id="busyworking">
+        <p class="typebox"><span class="rounded">Busyworking</span></p>
+      </div>
     </div>
+  </div>
+
+  </div>
+
+  <button  class="search rounded float-right text-center">Find activities!</button>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Card Multi Select
+      $('.cardx').click(function () {
+
+        if ($(this).hasClass('active')) {
+          $(this).removeClass('active');
+        }
+        else { $(this).addClass('active'); }
+      });
+    });
 
 
-    <script>
-        $(document).ready(function () {
-  // Card Multi Select
-  $('.cardx').click(function () {
+  </script>
+</body>
 
-    if ($(this).hasClass('active')) {
-      $(this).removeClass('active');
-    }
-    else
-    { $(this).addClass('active'); }
-  });
-});
-
-
-</script>
-  </body>
 </html>
