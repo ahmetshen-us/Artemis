@@ -24,6 +24,7 @@ query+=property+"="+args[property]+"&"
           })
           .catch(error => {
             console.log(error);
+            resolve(null)
           });
 
         })
