@@ -1,4 +1,49 @@
 body{
     background-color: #141135;
-    color: aqua;
+    color: rgb(169, 243, 158);
+    font-family: 'Abel', sans-serif;
+}
+
+.header{
+    font-size: 5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.midbox{
+    height: 30%;
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.typebox{
+    height: 45px;
+    width: 150px;
+    background-color: #b6afff;
+    color: black;
+    margin: 10px;
+    font-size: 30px;
+}
+
+.search{
+    height: 45px;
+    width: 250px;
+    background-color: rgb(169, 243, 158);
+    color: black;
+    margin: 10px;
+    font-size: 30px;
+}
+
+.anything{
+    height: 45px;
+    width: 250px;
+    background-color: #b6afff;
+    color: black;
+    margin: 10px;
+    font-size: 30px;  
+}
+
+.invisible{
+    color: #141135;
 }
