@@ -1,0 +1,205 @@
+body{
+    background-color: #141135;
+
+    font-family: 'Abel', sans-serif;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cardx {
+  flex: 1 0 20%;
+  position: relative;
+  margin: .5em;
+  padding: 2em;
+  min-height: 4em;
+  background: white;
+  border: 5px solid grey;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  
+}
+.cardx:hover{
+cursor:pointer;
+}
+
+.active { border-color: rgb(169, 243, 158); 
+}
+
+/* This is where the magic happens */
+input[type="checkbox"] {
+  position: absolute;
+  top: .5em;
+  left:.5em;
+}
+
+@media (pointer: coarse) { 
+  input[type="checkbox"] {
+    height: 2em;
+    width: 2em;
+  }
+}
+
+/* Use z-index to make it accessible to keyboard navigation */
+@media (hover: hover) {
+              input[type="checkbox"] { z-index: -1 }
+  .cardx:hover input[type="checkbox"],
+              input[type="checkbox"]:focus,
+              input[type="checkbox"]:checked { z-index: auto }
+}
+.header{
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    /* margin: -10px; */
+    color: rgb(169, 243, 158);
+
+
+}
+
+.midbox{
+    height: 30%;
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.typebox span { 
+  background-color: #ffffffc4;
+  padding: 4px;
+}
+
+.typebox{
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center; 
+}
+
+.search{
+  position: static;
+  bottom:0%;
+  margin: 10px;
+  width:100%;
+    
+}
+
+.anything{
+    height: 45px;
+    width: 250px;
+    background-color: #b6afff;
+    color: black;
+    margin: 10px;
+    font-size: 30px;  
+}
+
+.invisible{
+    color: #141135;
+}
+
+#modalBody{
+  text-align: center;
+}
+
+#cooking{
+background-image: url("https://images.unsplash.com/photo-1514986888952-8cd320577b68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80");
+}
+
+#learning{
+  background-image: url("https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+}
+
+#havingfun{
+  background-image: url("https://images.unsplash.com/photo-1450500392544-c2cb0fd6e3b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+}
+
+#socializing{
+  background-image: url("https://images.unsplash.com/photo-1470753937643-efeb931202a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+}
+
+#crafting{
+  background-image: url("https://images.unsplash.com/photo-1452860606245-08befc0ff44b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+}
+
+#helping{
+  background-image: url("https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+}
+
+#relaxing{
+  background-image: url("https://images.unsplash.com/photo-1519834411415-51492bcd6027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1924&q=80");
+}
+
+#musicking{
+  background-image: url("https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80");
+}
+
+#busyworking{
+  background-image: url("https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
