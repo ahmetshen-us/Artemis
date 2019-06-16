@@ -22,6 +22,10 @@ body{
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
+  
+}
+.cardx:hover{
+cursor:pointer;
 }
 
 .active { border-color: rgb(169, 243, 158); 
@@ -49,7 +53,7 @@ input[type="checkbox"] {
               input[type="checkbox"]:checked { z-index: auto }
 }
 .header{
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
     font-weight: bold;
     /* margin: -10px; */

@@ -15,7 +15,6 @@
 
 <body>
   <p class="header">I feel like:</p>
-
 <div class="container"> 
   <div class="cards justify-content-md-center">
 
@@ -66,7 +65,7 @@
 
  
 
-  <button  class="search btn btn-success disabled"  id="searchButton"></spa><i class="fa fa-long-arrow-right"></i></button>
+  <button  class="search btn btn-success " disabled id="searchButton"></spa><i class="fa fa-long-arrow-right"></i></button>
   <!-- data-toggle="modal" data-target="#exampleModal" -->
   </div>
 
@@ -86,6 +85,8 @@
            <h3 id="activityName"></h3>
            <h3 id="activityParticipant"></h3>
            <h3 id="activityPice"></h3>
+           <a id="luckLink" href="" target="_blank"><button type="button" class="btn btn-link btn-lg">Help me do it! &nbsp;&nbsp;<i class="fa fa-external-link"></i></button></a>
+
           </div>
 
             <button type="button" class="btn btn-primary btn-lg" id="nextAct">Next suggestion</button>
@@ -116,9 +117,9 @@
           countActive++;
       }
       if(countActive>0){
-        $(searchButton).removeClass("disabled")
+        $(searchButton).removeAttr("disabled")
       }else{
-        $(searchButton).addClass("disabled")
+        $(searchButton).attr("disabled","disabled")
       }
 
       });
@@ -163,7 +164,7 @@ $('#infoAct').text(actInfo);
 
 // $('#activityPice').text(rPrice);
 // $('#activityParticipant').text(rPart);
-
+$('#luckLink').attr("href","http://www.google.com/search?q="+rAct.replace(/ /g,"+")+"&btnI")
 $('#exampleModal').modal('show');
 
 });
