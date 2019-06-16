@@ -82,12 +82,11 @@ input[type="checkbox"] {
 }
 
 .search{
-    font-size: 30px;
-    width: 60px;
-    height: 100%;
-    position: fixed;
-    left: 90%;
-    top: 0%;
+  position: static;
+  bottom:0%;
+  margin: 10px;
+  width:100%;
+    
 }
 
 .anything{
