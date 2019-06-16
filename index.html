@@ -14,9 +14,8 @@
 </head>
 
 <body>
-  <p class="header">I feel like:</p>
-<div class="container"> 
-  <div class="cards justify-content-md-center">
+  <!-- <p class="header">I feel like:</p> -->
+  <div class="container ">
 
     <div class="row">
       <div class="cardx text-center" id="learning" val="education">
@@ -33,20 +32,17 @@
 
     </div>
     <div class="row">
-
       <div class="cardx text-center" id="cooking" val="cooking">
         <p class="typebox"><span class="rounded">Cooking</span></p>
       </div>
 
-      <div class="cardx text-center" id="crafting"  val="diy">
+      <div class="cardx text-center" id="crafting" val="diy">
         <p class="typebox"><span class="rounded">Crafting</span></p>
       </div>
 
       <div class="cardx text-center" id="helping" val="charity">
         <p class="typebox"><span class="rounded">Helping</span></p>
       </div>
-
-
     </div>
 
     <div class="row">
@@ -61,40 +57,44 @@
         <p class="typebox"><span class="rounded">Busyworking</span></p>
       </div>
     </div>
-  </div>
 
- 
+    <div class="row">
+      <button class="search btn btn-success" disabled id="searchButton"></spa><i
+          class="fa fa-long-arrow-right"></i></button>
+    </div>
 
-  <button  class="search btn btn-success " disabled id="searchButton"></spa><i class="fa fa-long-arrow-right"></i></button>
-  <!-- data-toggle="modal" data-target="#exampleModal" -->
+
+
+    <!-- data-toggle="modal" data-target="#exampleModal" -->
   </div>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header" id="modalHeader">
-            <div style="width:100%">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" id="modalHeader">
+          <div style="width:100%">
             <h5 class="modal-title" style="float: left">Here is one suggestion:</h5>
             <h5 style="float: right;" id="infoAct"></h5>
           </div>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="modalBody">
-           <h3 id="activityName"></h3>
-           <h3 id="activityParticipant"></h3>
-           <h3 id="activityPice"></h3>
-           <a id="luckLink" href="" target="_blank"><button type="button" class="btn btn-link btn-lg">Help me do it! &nbsp;&nbsp;<i class="fa fa-external-link"></i></button></a>
-
-          </div>
-
-            <button type="button" class="btn btn-primary btn-lg" id="nextAct">Next suggestion</button>
-            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <h3 id="activityName"></h3>
+          <h3 id="activityParticipant"></h3>
+          <h3 id="activityPice"></h3>
+          <a id="luckLink" href="" target="_blank"><button type="button" class="btn btn-link btn-lg">Help me do it!
+              &nbsp;&nbsp;<i class="fa fa-external-link"></i></button></a>
 
         </div>
+
+        <button type="button" class="btn btn-primary btn-lg" id="nextAct">Next suggestion</button>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+
       </div>
     </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -105,71 +105,71 @@
     var countActive = 0;
     $(document).ready(function () {
       // Card Multi Select
-      
+
       $('.cardx').click(function () {
 
         if ($(this).hasClass('active')) {
           countActive--;
           $(this).removeClass('active');
         }
-        else { 
+        else {
           $(this).addClass('active');
           countActive++;
-      }
-      if(countActive>0){
-        $(searchButton).removeAttr("disabled")
-      }else{
-        $(searchButton).attr("disabled","disabled")
-      }
+        }
+        if (countActive > 0) {
+          $(searchButton).removeAttr("disabled")
+        } else {
+          $(searchButton).attr("disabled", "disabled")
+        }
 
       });
     });
 
-    $('#searchButton,#nextAct').click(function(){
+    $('#searchButton,#nextAct').click(function () {
       var acts = [];
-      $('.cardx').each(function(){
+      $('.cardx').each(function () {
         if ($(this).hasClass('active')) {
           // console.log($(this).attr("val"))
           acts.push($(this).attr("val"))
         }
       })
-      
-     var randAct = acts[Math.floor(Math.random() * Math.floor(acts.length))]
-// console.log(acts)
-// console.log(randAct)
-$.get( "http://localhost:8080/graphql?query=%7B%0AgetAnActivity(type%3A%22"+randAct+"%22)%20%7B%0A%20%20activity%0A%20%20accessibility%0A%20%20type%0A%20%20participants%0A%20%20price%0A%20%20link%0A%7D%0A%20%20%0A%0A%7D", function( data ) {
-  var rAct = data["data"]["getAnActivity"].activity;
-  var rPart = data["data"]["getAnActivity"].participants;
-  var rPrice = data["data"]["getAnActivity"].price;
-  
-  console.log(rAct,rPart,rPrice)
-$('#activityName').text(rAct);
-var actInfo= "";
-if(rPart >1){
-  actInfo+="Group | "
-}else{
-  actInfo+="Individual | "
-}
 
-var coinAmount = Math.ceil(rPrice/0.2);
-if(coinAmount == 0){
-  actInfo+="Free"
-}else{
-for (let i = 0; i < coinAmount; i++) {
-  actInfo+="$"
-}
-}
+      var randAct = acts[Math.floor(Math.random() * Math.floor(acts.length))]
+      // console.log(acts)
+      // console.log(randAct)
+      $.get("http://localhost:8080/graphql?query=%7B%0AgetAnActivity(type%3A%22" + randAct + "%22)%20%7B%0A%20%20activity%0A%20%20accessibility%0A%20%20type%0A%20%20participants%0A%20%20price%0A%20%20link%0A%7D%0A%20%20%0A%0A%7D", function (data) {
+        var rAct = data["data"]["getAnActivity"].activity;
+        var rPart = data["data"]["getAnActivity"].participants;
+        var rPrice = data["data"]["getAnActivity"].price;
 
-$('#infoAct').text(actInfo);
+        console.log(rAct, rPart, rPrice)
+        $('#activityName').text(rAct);
+        var actInfo = "";
+        if (rPart > 1) {
+          actInfo += "Group | "
+        } else {
+          actInfo += "Individual | "
+        }
 
-// $('#activityPice').text(rPrice);
-// $('#activityParticipant').text(rPart);
-$('#luckLink').attr("href","http://www.google.com/search?q="+rAct.replace(/ /g,"+")+"&btnI")
-$('#exampleModal').modal('show');
+        var coinAmount = Math.ceil(rPrice / 0.2);
+        if (coinAmount == 0) {
+          actInfo += "Free"
+        } else {
+          for (let i = 0; i < coinAmount; i++) {
+            actInfo += "$"
+          }
+        }
 
-});
+        $('#infoAct').text(actInfo);
 
-     
+        // $('#activityPice').text(rPrice);
+        // $('#activityParticipant').text(rPart);
+        $('#luckLink').attr("href", "http://www.google.com/search?q=" + rAct.replace(/ /g, "+") + "&btnI")
+        $('#exampleModal').modal('show');
+
+      });
+
+
 
 
     })
