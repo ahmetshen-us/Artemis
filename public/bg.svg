@@ -1,0 +1,9 @@
+<svg width="100%" height="100%" id="bored-bg" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="bored-svg" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+        <text x="0" y="15" fill="green" style="font-size: 20px;" transform="rotate(-30 100,0)">I feel like</text>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#bored-svg)"></rect>
+
+  </svg>
